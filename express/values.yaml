@@ -1,0 +1,12 @@
+# Default values for express.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+name: express-test
+replicaCount: 1
+
+service:
+  type: NodePort
+  port: 3000
+  targetPort: 3000
+  nodePort: 30007

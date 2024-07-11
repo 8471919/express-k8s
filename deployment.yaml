@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-test
+  labels:
+    app: express-test
+  namespace: study
+spec:
+  selector:
+    matchLabels:
+      app: express-test
+  template:
+    metadata:
+      labels:
+        app: express-test
+    spec:
+      containers:
+        - name: express-test
+          image: test:latest
+          imagePullPolicy: Never
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 3000
